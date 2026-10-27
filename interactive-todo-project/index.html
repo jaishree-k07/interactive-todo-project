@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple, responsive to-do list that saves tasks in your browser.">
+  <title>Little List | To-Do App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div class="logo" aria-hidden="true">✓</div>
+      <p class="eyebrow">YOUR DAY, YOUR WAY</p>
+      <h1>Little List<span>.</span></h1>
+      <p class="subtitle">A little progress adds up. What would you like to do today?</p>
+    </header>
+
+    <section class="todo-card" aria-labelledby="tasks-heading">
+      <form id="form" class="task-form">
+        <label class="visually-hidden" for="text">Add a task</label>
+        <input id="text" name="task" type="text" maxlength="180"
+               placeholder="Write a task here..." autocomplete="off" required>
+        <button class="add-button" type="submit">+ Add task</button>
+      </form>
+
+      <div class="list-heading">
+        <div>
+          <h2 id="tasks-heading">Your tasks</h2>
+          <p id="count" class="count" aria-live="polite">0 tasks left</p>
+        </div>
+        <button id="clear-completed" class="text-button" type="button">Clear completed</button>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button class="filter active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" type="button" data-filter="active" aria-pressed="false">Active</button>
+        <button class="filter" type="button" data-filter="done" aria-pressed="false">Done</button>
+      </div>
+
+      <ul id="list" class="task-list" aria-label="To-do tasks"></ul>
+      <p id="empty-state" class="empty-state">🌱 Your list is clear. Add a task to get started!</p>
+      <footer class="card-footer">
+        <span>Saved automatically on this device</span>
+        <span class="save-indicator"><span class="save-dot"></span> Local storage on</span>
+      </footer>
+    </section>
+
+    <p class="page-note">Made for small steps and big goals ✨</p>
+  </main>
+</body>
+</html>
